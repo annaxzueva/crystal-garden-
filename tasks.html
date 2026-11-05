@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crystal Garden - задания</title>
+  <link rel="icon" href="img/moon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pic.css">
+  <link rel="stylesheet" href="css/banner.css">
+  <link rel="stylesheet" href="css/quiz.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a class="logo" href="index.html"><span class="logo-mark"></span>Crystal Garden</a>
+      <nav>
+        <a href="index.html">Главная</a>
+        <a href="crystals.html">Каталог</a>
+        <a href="properties.html">Свойства</a>
+        <a class="active" href="tasks.html">Задания</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="page-title">
+      <h1>Задания</h1>
+      <p>Практические работы по вёрстке.</p>
+      <div class="links" style="text-align:center; margin-top:20px;">
+        <a href="#task-1">Работа 1</a>
+        <a href="#task-2">Работа 2</a>
+        <a href="#task-3">Работа 3</a>
+        <a href="#course">Курсовая</a>
+      </div>
+    </div>
+
+    <!-- Задание 1 -->
+    <section class="task" id="task-1">
+      <h2>Практическая работа 1: рисунок на CSS</h2>
+      <p class="task-text">Трактор нарисован только с помощью HTML и CSS. Каждая деталь - отдельный блок с position: absolute внутри рамки 200 на 200 пикселей. Солнце сделано радиальным градиентом, крыша и корпус - через clip-path, а колёса - с помощью псевдоэлементов ::before и ::after.</p>
+      <div class="box">
+        <div class="pic-frame">
+          <div class="sun-rays">
+            <span class="ray-1"></span>
+          </div>
+
+          <div class="cloud">
+            <span class="cloud-1"></span>
+            <span class="cloud-2"></span>
+            <span class="cloud-3"></span>
+          </div>
+
+          <div class="drop drop-1"></div>
+          <div class="drop drop-2"></div>
+          <div class="drop drop-3"></div>
+
+          <div class="exhaust-pipe"></div>
+
+          <div class="roof"></div>
+          <div class="roof-leg-left"></div>
+          <div class="roof-leg-right"></div>
+
+          <div class="curve"></div>
+
+          <div class="body-top"></div>
+          <div class="body-bottom"></div>
+
+          <div class="boiler"></div>
+
+          <div class="wheel wheel-big"></div>
+          <div class="wheel wheel-small"></div>
+
+          <div class="grass">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Задание 2 -->
+    <section class="task" id="task-2">
+      <h2>Практическая работа 2: анимированный ролик</h2>
+      <p class="task-text">Анимированный баннер без JavaScript. При наведении мальчик ищет мяч, а при нажатии оказывается, что он пнул кирпич. Кадры переключаются через opacity, а движение сделано с помощью @keyframes. Наведите курсор или нажмите на картинку.</p>
+      <div class="box">
+        <div class="banner">
+          <div class="text-question">Где мяч?</div>
+          <div class="text-brick">Это кирпич!</div>
+
+          <img src="img/boy1.png" class="boy boy-1" alt="Мальчик приветствует">
+          <img src="img/boy2.png" class="boy boy-2" alt="Мальчик думает">
+          <img src="img/boy3.png" class="boy boy-3" alt="Мальчик упал">
+
+          <div class="brick-wrap">
+            <img src="img/brick.png" class="brick-img" alt="Кирпич">
+          </div>
+
+          <div class="ball-wrap">
+            <img src="img/ball.png" class="ball-img" alt="Мяч">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Задание 3 -->
+    <section class="task" id="task-3">
+      <h2>Практическая работа 3: тест «Сленг»</h2>
+      <p class="task-text">Тест по молодёжному сленгу. Вопросы и ответы хранятся в массиве и добавляются на страницу через JavaScript в случайном порядке. Выберите один ответ на каждый вопрос.</p>
+      <div class="box box-test">
+        <div id="end" class="end hidden">
+          <p class="end-title">Вопросы закончились</p>
+          <p id="result"></p>
+          <p>Нажмите на вопрос, чтобы увидеть правильный ответ.</p>
+        </div>
+
+        <div class="test">
+          <div class="test-label">Вопрос</div>
+          <div id="questions"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="task" id="course">
+      <h2>Курсовая работа</h2>
+      <p class="task-text">Раздел появится позже.</p>
+    </section>
+  </main>
+
+  <footer>
+    <a class="logo" href="index.html"><span class="logo-mark"></span>Crystal Garden</a>
+  </footer>
+
+  <script src="js/quiz.js"></script>
+</body>
+</html>

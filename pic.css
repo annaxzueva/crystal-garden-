@@ -1,0 +1,248 @@
+.pic-frame {
+  --sun-a: #ffe54f;
+  --sun-b: #ff9800;
+  --sky-a: #ffffff;      
+  --sky-b: #4a90e2;      
+  --roof-color: #e29415; 
+  --window-color: #f9ba19;
+  --curve-color: #e4572e;
+  --body-color: #80dc94; 
+  --body-color-dark: #6fbf80;
+  --bottom-color:#9c7f51;
+  --pipe-color: #e29415; 
+  --wheel-dark: #80604f; 
+  --wheel-mid: #ecd9ae;  
+  --wheel-dot: #e53935;  
+  --grass-a: #6be216;
+  --grass-b: #f5ffe9;
+
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+
+
+.sun-rays {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 76px;
+  height: 76px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.sun-rays span {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.ray-1 { width: 110px; height: 110px; top: -55px; left: -55px; background: radial-gradient(var(--sky-a) 3% 5%, var(--sun-a) 5% 8%, var(--sun-b) 12%, 
+  var(--sky-a) 12% 19%, var(--sun-a) 19% 22%, var(--sun-b) 26%, var(--sky-a) 26% 33%, var(--sun-a) 33% 36%, var(--sun-b) 41%, var(--sky-a) 41% 48%, 
+  var(--sun-a) 48% 52%, var(--sun-b) 56%, var(--sky-a) 56% 63%, var(--sun-a) 63% 66%, var(--sun-b) 70%); }
+
+
+
+.cloud {
+  position: absolute;
+  top: -30px;
+  left: 75px;
+  width: 100px;
+  height: 50px;
+  z-index: 2;
+}
+
+.cloud span {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 30%, var(--sky-a), var(--sky-b) 80%);
+}
+
+.cloud-1 { width: 70px; height: 50px; left: 0;    top: 10px; }
+.cloud-2 { width: 70px; height: 50px; left: 40px; top: 0;  }
+.cloud-3 { width: 70px; height: 50px; left: 80px; top: -5px; }
+
+
+
+.drop {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 30%, var(--sky-a), var(--sky-b) 80%);
+  z-index: 4;
+}
+
+.drop-1 { width: 12px; height: 12px; left: 140px; top: 55px; }
+.drop-2 { width: 13px; height: 13px; left: 145px; top: 40px; }
+.drop-3 { width: 15px; height: 15px; left: 155px; top: 28px; }
+
+
+
+.exhaust-pipe {
+  position: absolute;
+  width: 11px;
+  height: 50px;
+  background: linear-gradient(to right, var(--pipe-color), #fbfafa, var(--pipe-color));
+  top: 70px;
+  left: 140px;
+  z-index: 3;
+}
+
+
+
+.roof {
+  position: absolute;
+  width: 78px;
+  height: 15px;
+  left: 54px;
+  top: 68px;
+  background: var(--roof-color);
+  clip-path: polygon(0 0,100%  0, 85% 100%, 0 100%);
+  z-index: 5;
+}
+
+.roof-leg-left {
+  position: absolute;
+  width: 8px;
+  height: 45px;
+  left: 60px;
+  top: 83px;
+  background: var(--window-color);
+  z-index: 5;
+}
+
+.roof-leg-right {
+  position: absolute;
+  width: 8px;
+  height: 28px;
+  left: 95px;
+  top: 83px;
+  background: var(--window-color);
+  z-index: 5;
+}
+
+/* колеса */
+
+.wheel {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--wheel-dark);
+  z-index: 8;
+}
+
+.wheel::before,
+.wheel::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
+.wheel::before {
+  background: var(--wheel-mid);
+  inset: 13%;
+}
+
+.wheel::after {
+  background: var(--wheel-dot);
+  inset: 45%;
+}
+
+.wheel-big {
+  width: 60px;
+  height: 60px;
+  left: 40px;
+  top: 118px;
+}
+
+.wheel-small {
+  width: 35px;
+  height: 35px;
+  left: 138px;
+  top: 143px;
+}
+
+/* сиденье */
+
+.curve {
+  position: absolute;
+  width: 29px;   /* R */
+  height: 29px;  /* R */
+  left: 64px;
+  top: 95px;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.curve::before {
+  content: "";
+  position: absolute;
+  width: 58px;   /* 2R */
+  height: 52px;  /* 2R */
+  left: 0;
+  top: -22px;    /* центр круга - в правом верхнем углу контейнера */
+  border-radius: 50%;
+  background: radial-gradient(var(--sky-a) 52%, var(--curve-color) 52%) ;
+}
+
+/* центр трапеции*/
+
+.body-top {
+  position: absolute;
+  width: 78px;
+  height: 15px;
+  left: 87px;
+  top: 110px;
+  background: var(--body-color);
+  clip-path: polygon(0 0, 85% 0, 100% 100%, 0 100%);
+  z-index: 5;
+}
+
+.body-bottom {
+  position: absolute;
+  width: 80px;
+  height: 15px;
+  left: 85px;
+  top: 125px;
+  background: var(--body-color-dark);
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+  z-index: 5;
+}
+
+/* нижняя труба */
+
+.boiler {
+  position: absolute;
+  width: 88px;
+  height: 28px;
+  left: 68px;
+  top: 135px;
+  background: linear-gradient(to bottom, var(--bottom-color), #f5ead9, var(--bottom-color));
+  z-index: 3;
+  transform: rotate(0deg);
+}
+
+/* трава  */
+.grass {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 200px;
+  height: 22px;
+  display: flex;
+  z-index: 1;
+  
+}
+
+.grass span {
+  flex: 1 1 auto;
+  height: 100%;
+  background: linear-gradient(to right, var(--grass-b) 3%, var(--grass-a) 90%, var(--grass-b));
+}
+
+
+

@@ -1,0 +1,153 @@
+/* Задание 3 вариант 2*/
+
+.banner {
+	width: 200px;
+	height: 200px;
+	position: relative;
+	overflow: hidden;
+	border: 2px solid #000;
+	box-sizing: border-box;
+	background: linear-gradient(#ffffff 15%, #75ac63 100%);
+	cursor: pointer;
+	color: #000;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+.banner img,
+.banner div {
+	position: absolute;
+	transition: opacity 0.2s;
+}
+
+.banner img {
+	max-width: none;
+	-webkit-user-drag: none;
+}
+
+.banner .boy-1 {
+	bottom: 18px;
+	left: 25px;
+	width: 94px;
+}
+
+.banner .boy-1 {
+	bottom: 18px;
+	left: 70px;
+	width: 94px;
+}
+.banner .boy-2 {
+	bottom: 18px;
+	left: 30px;
+	width: 94px;
+	opacity: 0;
+}
+
+.banner .boy-3 {
+	bottom: 18px;
+	left: 0px;
+	width: 125px;
+	opacity: 0;
+}
+
+.banner .text-question {
+	top: 10px;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	font: 20px Arial, sans-serif;
+	opacity: 0;
+}
+
+.banner .text-brick {
+	top: 65px;
+	left: 65px;
+	font:  20px Arial, sans-serif;
+	white-space: nowrap;
+	transform: rotate(-31deg);
+	opacity: 0;
+}
+
+.banner .ball-wrap {
+	bottom: 20px;
+	left: 150px;
+	width: 35px;
+	height: 35px;
+	opacity: 0;
+}
+
+.banner .brick-wrap {
+	bottom: 20px;
+	left: 105px;
+	width: 35px;
+	height: 35px;
+	opacity: 0;
+}
+
+.banner .ball-wrap img,
+.banner .brick-wrap img {
+	width: 100%;
+	height: 100%;
+}
+
+.banner:hover .boy-1 { opacity: 0; }
+.banner:hover .boy-2 { opacity: 1; }
+.banner:hover .text-question { opacity: 1; }
+
+.banner:hover .ball-wrap {
+	opacity: 1;
+	animation: ballIn 1s ease-out forwards;
+}
+
+.banner:hover .brick-wrap {
+	opacity: 1;
+	animation: brickIn 0.8s ease-out forwards;
+}
+
+.banner:hover .ball-wrap:hover,
+.banner:hover .brick-wrap:hover {
+	animation: spin 0.7s linear infinite;
+}
+
+.banner:active .boy-1,
+.banner:active .boy-2 { opacity: 0; }
+
+.banner:active .boy-3 {
+	opacity: 1;
+	animation: shake 0.1s infinite alternate;
+}
+
+.banner:active .text-question { opacity: 0; }
+.banner:active .text-brick { opacity: 1; }
+
+.banner:active .brick-wrap {
+	animation: brickOut 1s ease-in forwards;
+}
+
+@keyframes ballIn {
+	0%   { transform: translate(-180px, 40px); }
+	25%  { transform: translate(-40px, -150px); }
+	50%  { transform: translate(-70px, -130px); }
+	75%  { transform: translate(-90px, -100px); }
+	100% { transform: translate(0, 0); }
+}
+
+@keyframes brickIn {
+	from { transform: translate(100px, -80px); }
+	to   { transform: translate(0, 0); }
+}
+
+@keyframes spin {
+	to { transform: rotate(360deg); }
+}
+
+@keyframes shake {
+	to { transform: translateY(-3px); }
+}
+
+@keyframes brickOut {
+	0%   { transform: translate(0, 0); opacity: 1; }
+	33%  { transform: translate(30px, -40px); }
+	66%  { transform: translate(60px, -60px); }
+	100% { transform: translate(120px, -140px); opacity: 0; }
+}
